@@ -1,0 +1,16 @@
+<h1>{{rootTitle}}</h1>
+
+<div (click)="initConfig()">volver al inicio</div>
+
+<div *ngIf="currentItem.id != 0">
+    PADRE : <b>{{currentItem.name}}</b>
+    <div *ngFor="let item of currentItem.childrens">
+        <p (click)="setItem(item)">{{item.name}}</p>    
+    </div>    
+</div>
+
+<div *ngIf="currentItem.id == 0">
+    <div *ngFor="let item of tree">
+        <p (click)="setItem(item)">{{item.name}}</p>    
+    </div>
+</div>
